@@ -1,0 +1,10 @@
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - before: npm install -g serverless@2.21.1
+    init: serverless login 
+    command: sls config credentials --provider aws --key AKIAQ3V44R3Y7S6MU4O7 --secret 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 --profile serverless
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+#ports:
+#  - port: 3000
+#    onOpen: open-preview
