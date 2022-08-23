@@ -1,5 +1,6 @@
-pp: serverless_todoapp_p4
-service: serverless_todoapp_p4
+org: petitmj
+app: serverless-todoapp-p4
+service: serverless-todoapp-p4
 
 plugins:
   - serverless-webpack
@@ -11,15 +12,13 @@ provider:
   name: aws
   runtime: nodejs12.x
 
-  stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'prod'}
+  region: ${opt:region, 'us-east-2'}
 
   environment:
-    PROJECT_NAME: serverless_todoapp_p4
-    TODOS_TABLE: Todos-${self:provider.stage}
-    #TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    S3_BUCKET_NAME: serverless-c4-todo-images-${self:provider.stage}
-    #SIGNED_URL_EXPIRATION: 300
+    PROJECT_NAME: serverless-todoapp-p4
+    TODOS_TABLE: serverless-todos-${self:provider.stage}
+    S3_BUCKET_NAME: serverless-todo-images-${self:provider.stage}
 
   tracing:
     lambda: true
